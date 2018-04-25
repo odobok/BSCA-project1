@@ -1,15 +1,149 @@
 /*Typography */
 
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+	margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
 h1 {
   color: #4D8FB2;
   font-family:
 }
 
-img {
-  max-width: 33%;
+p {
+	margin-bottom: 1.5em;
 }
 
-/*General Styling*/
-header {
+/*--------------------------------------------------------------
+General Styling
+--------------------------------------------------------------*/
 
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.cards {
+	max-width: 25em;
+	margin: 1em auto;
+	padding: 0;
+	list-style-type: none;
+
+}
+
+.cards a {
+	display: block;
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+.daycaption {
+	padding: 1em;
+	font-size: 90%;
+	color: black;
+}
+
+.class-date {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+.caption p {
+	margin-top: .5em;
+	margin-bottom: 0;
+}
+
+.cards a:focus .caption,
+.cards a:hover .caption {
+	background: hsl(0, 0%, 97%);
+}
+
+
+/* CSS Grid for modern browsers */
+
+@supports (grid-area: auto) {
+  /* Enable grid for viewports 600px and wider: */
+  @media screen and (min-width: 27em) {
+
+    /* three column layout for header */
+    .header {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .name {
+      grid-column: 1/3;
+    }
+
+    .kpic {
+      grid-column: 3/4;
+			grid-row: 1/4;
+    }
+
+    .byline {
+      grid-row: 2;
+    }
+
+    .cards {
+      margin: 0 auto;
+      padding: 1em;
+    }
+
+    .card {
+      margin: 1em 0;
+      padding: .5em;
+      display: grid;
+      grid-template-columns: 8em auto;
+    }
+
+    .cards a:focus,
+    .cards a:hover {
+      outline: 1px solid hsl(0, 0%, 80%);
+    }
+  }
+  @media screen and (min-width: 60em) {
+
+    .cards {
+      max-width: none;
+      margin: 1em 0;
+      display: grid;
+      grid-template-columns: repeat(2, 25em);
+      grid-gap: 1em;
+      justify-content: center;
+    }
+
+    .card {
+      margin: 0;
+    }
 }
